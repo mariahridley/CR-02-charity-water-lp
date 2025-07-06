@@ -193,12 +193,47 @@
       font-size: 1.5rem; /* Large text */
       font-weight: bold; /* Bold text */
       cursor: pointer; /* Show it's clickable */
-      transition: all 0.3s ease; /* Smooth hover effect */
+      transition: all 0.4s ease; /* Longer transition for dramatic effect */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Strong initial shadow */
+      position: relative; /* For additional effects */
     }
 
     .donate-btn:hover {
       background-color: #FFD700; /* Slightly different yellow on hover */
-      transform: translateY(-2px); /* Lift button slightly on hover */
+      transform: translateY(-6px) scale(1.1); /* Big lift and growth for main donate button */
+      box-shadow: 0 15px 35px rgba(255, 201, 7, 0.6); /* Dramatic yellow glow */
+      color: #001F3F; /* Navy text on hover */
+    }
+
+    /* Pulse animation on hover for donate button */
+    .donate-btn:hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 3px solid #FFC907;
+      border-radius: 8px;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Active state for donate button */
+    .donate-btn:active {
+      transform: translateY(-3px) scale(1.05);
+      transition: all 0.1s ease;
+    }
+
+    /* Pulse animation keyframes */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
     }
 
     /* Top call-to-action button */
@@ -214,20 +249,38 @@
       font-weight: bold;
       cursor: pointer;
       font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Hover effect for top button */
+    .top-cta:hover {
+      background-color: #FFD700; /* Lighter yellow on hover */
+      transform: translateY(-3px) scale(1.05); /* Lift and slightly grow */
+      box-shadow: 0 8px 20px rgba(255, 201, 7, 0.4); /* Yellow glow shadow */
+    }
+
+    /* Active state when button is pressed */
+    .top-cta:active {
+      transform: translateY(-1px) scale(1.02); /* Less lift when pressed */
+      transition: all 0.1s ease; /* Quick transition for click */
     }
 
     /* Main heading style */
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 4rem; /* Much larger heading for more impact */
+      margin-bottom: 25px; /* More space below heading */
+      font-weight: 700; /* Bolder font weight */
+      line-height: 1.1; /* Tighter line height for big text */
     }
 
     /* Paragraph style */
     p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      font-size: 1.4rem; /* Larger subheadline text */
+      margin-bottom: 30px; /* More space before button */
       color: #eee;
+      line-height: 1.5; /* Better line spacing for larger text */
     }
 
     /* Main call-to-action button */
@@ -241,13 +294,62 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
+      transition: all 0.3s ease; /* Smooth hover transitions */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Initial shadow */
+      position: relative; /* For pseudo-element effects */
+      overflow: hidden; /* Hide overflow for ripple effect */
+    }
+
+    /* Hover effect for main CTA button */
+    .main-cta:hover {
+      background-color: #FFD700; /* Lighter yellow */
+      transform: translateY(-4px) scale(1.08); /* Bigger lift and growth */
+      box-shadow: 0 12px 25px rgba(255, 201, 7, 0.5); /* Stronger yellow glow */
+      color: #001F3F; /* Navy text on hover for contrast */
+    }
+
+    /* Active state for main CTA */
+    .main-cta:active {
+      transform: translateY(-2px) scale(1.04); /* Less movement when clicked */
+      transition: all 0.1s ease;
+    }
+
+    /* Ripple effect on click */
+    .main-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .main-cta:active::before {
+      width: 300px;
+      height: 300px;
     }
 
     /* RESPONSIVE DESIGN WITH MEDIA QUERIES */
     /* Media queries allow us to apply different styles based on screen size */
     /* This ensures our website looks great on phones, tablets, and desktops */
 
-    /* Tablet styles (768px and below) */
+    /* Large tablet styles (1024px and below) */
+    /* iPad Pro and large tablets need slight adjustments */
+    @media (max-width: 1024px) {
+      .hero {
+        padding-left: 8%; /* Slightly reduce padding */
+      }
+
+      h1 {
+        font-size: 3.5rem; /* Slightly smaller for large tablets */
+      }
+    }
+
+    /* Standard tablet styles (768px and below) */
     /* iPads and smaller tablets need medium-sized adjustments */
     @media (max-width: 768px) {
       .hero {
@@ -259,7 +361,11 @@
       }
 
       h1 {
-        font-size: 2.5rem; /* Medium heading size for tablets */
+        font-size: 3rem; /* Medium heading size for tablets */
+      }
+
+      p {
+        font-size: 1.3rem; /* Adjust paragraph size for tablets */
       }
 
       .impact-container {
@@ -275,8 +381,31 @@
       }
     }
 
-    /* Mobile phone styles (600px and below) */
-    /* Phones need the most dramatic layout changes for usability */
+    /* Large mobile phone styles (667px and below) */
+    /* iPhone 6/7/8 Plus, Galaxy S series in landscape */
+    @media (max-width: 667px) {
+      .hero {
+        justify-content: center; /* Start centering content */
+        padding-left: 3%; /* Minimal left padding */
+      }
+
+      .content {
+        text-align: center; /* Center text */
+        max-width: 90%; /* Use most of the width */
+      }
+
+      h1 {
+        font-size: 2.8rem; /* Good size for large phones */
+      }
+
+      .top-cta {
+        font-size: 0.95rem; /* Slightly smaller button text */
+        padding: 9px 14px; /* Adjust padding */
+      }
+    }
+
+    /* Standard mobile phone styles (600px and below) */
+    /* iPhone 6/7/8, Galaxy S series, most Android phones */
     @media (max-width: 600px) {
       /* Hero section adjustments for mobile */
       .hero {
@@ -292,8 +421,12 @@
 
       /* Make headings smaller so they fit on small screens */
       h1 {
-        font-size: 2rem; /* Much smaller heading for phones */
+        font-size: 2.5rem; /* Good size for standard phones */
         line-height: 1.2; /* Tighter line spacing */
+      }
+
+      p {
+        font-size: 1.2rem; /* Readable paragraph size */
       }
 
       /* Make logo smaller so it doesn't take up too much space */
@@ -361,23 +494,37 @@
       .main-cta {
         width: 100%; /* Full width on mobile */
         max-width: 280px; /* But not too wide */
+        padding: 14px 24px; /* Bigger touch target */
+        font-size: 1.1rem; /* Readable size */
       }
     }
 
-    /* Very small phone styles (480px and below) */
-    /* Extra small phones need even more compact layouts */
+    /* Small mobile phone styles (480px and below) */
+    /* iPhone SE, older Android phones, small screens */
     @media (max-width: 480px) {
       .hero {
         padding: 15px; /* Even less padding for tiny screens */
       }
 
       h1 {
-        font-size: 1.8rem; /* Even smaller heading */
+        font-size: 2.2rem; /* Smaller but still impactful */
+      }
+
+      p {
+        font-size: 1.1rem; /* Smaller paragraph text */
       }
 
       .logo {
         top: 15px; /* Move logo closer to top */
         left: 15px;
+      }
+
+      .logo img {
+        height: 35px; /* Even smaller logo */
+      }
+
+      .logo-text {
+        font-size: 1rem; /* Smaller text */
       }
 
       .top-cta {
@@ -394,6 +541,67 @@
 
       .donation-section h2 {
         font-size: 1.6rem; /* Smaller heading for tiny screens */
+      }
+
+      .main-cta {
+        max-width: 250px; /* Smaller max width */
+        font-size: 1rem; /* Smaller text */
+      }
+    }
+
+    /* Very small phone styles (375px and below) */
+    /* iPhone SE (1st gen), very compact phones */
+    @media (max-width: 375px) {
+      h1 {
+        font-size: 2rem; /* Even smaller for very small screens */
+        margin-bottom: 20px; /* Less margin */
+      }
+
+      p {
+        font-size: 1rem; /* Compact text */
+      }
+
+      .logo-text {
+        font-size: 0.9rem; /* Very compact logo text */
+        letter-spacing: 0.05em; /* Minimal spacing */
+      }
+
+      .impact-section,
+      .donation-section {
+        padding: 30px 10px; /* Minimal padding */
+      }
+
+      .main-cta {
+        max-width: 220px; /* Very compact button */
+        padding: 12px 20px; /* Smaller padding */
+      }
+    }
+
+    /* Landscape orientation adjustments for mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero {
+        height: auto; /* Don't force full height in landscape */
+        min-height: 100vh; /* But ensure it's at least full height */
+        padding: 10px; /* Minimal padding */
+      }
+
+      h1 {
+        font-size: 2rem; /* Smaller heading in landscape */
+        margin-bottom: 15px; /* Less margin */
+      }
+
+      p {
+        font-size: 1rem; /* Compact text */
+        margin-bottom: 20px; /* Less margin */
+      }
+
+      .logo img {
+        height: 30px; /* Smaller logo in landscape */
+      }
+
+      .top-cta {
+        padding: 5px 8px; /* Very small button */
+        font-size: 0.7rem; /* Tiny text */
       }
     }
   </style>
