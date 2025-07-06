@@ -1,47 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <!-- This section contains meta information and styles for the page -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>charity: water</title>
+  <!-- Import Google Fonts for better text appearance -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset default browser styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      /* Set the main font and background color */
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      background-color: #000;
+    }
+
+    h1, .logo, .top-cta, .main-cta {
+      /* Use a different font for headings and buttons */
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero {
+      /* Set a background image for the hero section */
+      background-image: url('https://charitywater.dropmark.com/993072/34019559');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 10%;
+    }
+
+    .overlay {
+      /* Add a dark overlay to make text easier to read */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .content {
+      /* Style the main content area */
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+      padding: 20px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .logo {
+      /* Style the logo in the top left */
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .logo span {
+      /* Highlight the checkmark in the logo */
+      background-color: #fbd104;
+      color: black;
+      padding: 4px 8px;
+      border-radius: 3px;
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .top-cta {
+      /* Style the top call-to-action button */
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #fbd104;
+      color: black;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    h1 {
+      /* Style the main heading */
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      /* Style the paragraph text */
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #eee;
+    }
+
+    .main-cta {
+      /* Style the main call-to-action button */
+      background-color: #fbd104;
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      /* Make the layout responsive for small screens */
+      .hero {
+        justify-content: center;
+        padding-left: 0;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        font-size: 1rem;
+        padding: 6px 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <!-- Hero section with background image and overlay -->
+  <section class="hero">
+    <div class="overlay"></div>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+    <!-- Logo in the top left corner -->
+    <div class="logo">
+      <span>☑</span> charity: water
+    </div>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+    <!-- Top call-to-action button -->
+    <button class="top-cta">Ready to Change a Life?</button>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+    <!-- Main content: heading, description, and main button -->
+    <div class="content">
+      <h1>Small Act.<br />Big Impact.</h1>
+      <p>charity: water makes it simple to change lives.<br />Starting with clean water.</p>
+      <button class="main-cta">$5 = Clean Water. That’s It.</button>
+    </div>
+  </section>
 </body>
 </html>
