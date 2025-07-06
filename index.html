@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>charity: water</title>
   <!-- Import Google Fonts for better text appearance -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Reset default browser styles */
     * {
@@ -19,13 +19,13 @@
       /* Set the main font and background color */
       font-family: 'Open Sans', sans-serif;
       color: white;
-      background-color: #000;
+      background-color: #001F3F; /* Navy background */
     }
 
     /* The hero section uses a large background image */
     .hero {
       /* Show a big image at the top of the page */
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+      background-image: url('img/Madagascar_2019_CG-4009-2.jpg');
       background-size: cover; /* Make the image cover the whole area */
       background-position: center; /* Center the image */
       height: 100vh; /* Make the hero section fill the screen */
@@ -34,17 +34,6 @@
       align-items: center;
       justify-content: flex-start;
       padding-left: 10%;
-    }
-
-    /* Add a dark overlay so text is easy to read */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
     }
 
     /* Main content on top of the hero image */
@@ -62,22 +51,154 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      font-size: 1.2rem;
-      font-weight: bold;
       display: flex;
       align-items: center;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 12px;
-      border-radius: 5px;
+      gap: 12px; /* Space between logo and text */
     }
 
-    .logo span {
-      background-color: #fbd104;
-      color: black;
-      padding: 4px 8px;
-      border-radius: 3px;
-      margin-right: 8px;
-      font-weight: bold;
+    .logo img {
+      height: 50px; /* Set the height of the logo image */
+      width: auto; /* Keep the width proportional */
+    }
+
+    .logo-text {
+      font-family: 'Libre Baskerville', serif; /* charity: water's typical serif font */
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: white;
+      letter-spacing: 0.15em; /* Spaced out letters like charity: water branding */
+      text-transform: lowercase; /* charity: water uses lowercase */
+    }
+
+    /* Impact story section styles */
+    .impact-section {
+      padding: 100px 20px; /* More padding to create better flow */
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Subtle gradient background */
+      color: #333; /* Dark text for readability */
+      position: relative; /* For any absolute positioned elements */
+    }
+
+    .impact-container {
+      max-width: 1200px; /* Limit the width on large screens */
+      margin: 0 auto; /* Center the container */
+      display: flex; /* Put image and text side by side */
+      align-items: center; /* Align items vertically */
+      gap: 80px; /* More space between image and text */
+    }
+
+    .impact-image {
+      flex: 1; /* Take up half the space */
+      max-width: 550px; /* Slightly larger for better impact */
+      position: relative; /* For styling enhancements */
+    }
+
+    .impact-image img {
+      width: 100%; /* Make image fill its container */
+      height: auto; /* Keep image proportions */
+      border-radius: 15px; /* More rounded corners for modern look */
+      box-shadow: 0 20px 40px rgba(0, 31, 63, 0.15); /* Navy shadow for brand consistency */
+      transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+
+    .impact-image img:hover {
+      transform: translateY(-5px); /* Subtle lift on hover */
+    }
+
+    /* Add a decorative element behind the image */
+    .impact-image::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+      background-color: #FFC907; /* Brand yellow accent */
+      border-radius: 15px;
+      z-index: -1; /* Behind the image */
+      opacity: 0.1; /* Very subtle */
+    }
+
+    .impact-text {
+      flex: 1; /* Take up the other half of the space */
+    }
+
+    .impact-text h2 {
+      font-family: 'Montserrat', sans-serif; /* Use heading font */
+      font-size: 2.8rem; /* Larger heading for more impact */
+      margin-bottom: 25px; /* More space below heading */
+      color: #001F3F; /* Navy color for heading */
+      line-height: 1.2; /* Tighter line height for large headings */
+      position: relative; /* For decorative elements */
+    }
+
+    /* Add a subtle underline accent to the heading */
+    .impact-text h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #FFC907; /* Brand yellow accent */
+      border-radius: 2px;
+    }
+
+    .impact-text p {
+      font-size: 1.2rem; /* Slightly larger text size */
+      line-height: 1.7; /* Better line spacing for readability */
+      margin-bottom: 25px; /* More space between paragraphs */
+      color: #555; /* Softer text color */
+    }
+
+    /* Make the first paragraph stand out more */
+    .impact-text p:first-of-type {
+      font-size: 1.3rem; /* Larger first paragraph */
+      color: #333; /* Darker for emphasis */
+      font-weight: 500; /* Slightly bolder */
+    }
+
+    /* Donation section styles */
+    .donation-section {
+      padding: 80px 20px; /* Add space around the section */
+      background-color: #001F3F; /* Navy background */
+      color: white; /* White text */
+      text-align: center; /* Center everything */
+    }
+
+    .donation-container {
+      max-width: 800px; /* Limit width for readability */
+      margin: 0 auto; /* Center the container */
+    }
+
+    .donation-section h2 {
+      font-family: 'Montserrat', sans-serif; /* Use heading font */
+      font-size: 3rem; /* Large heading */
+      margin-bottom: 20px; /* Space below heading */
+    }
+
+    .donation-section p {
+      font-size: 1.3rem; /* Larger text for impact */
+      margin-bottom: 40px; /* Space before button */
+      color: #eee; /* Slightly off-white */
+    }
+
+    /* Bold donate button */
+    .donate-btn {
+      font-family: 'Montserrat', sans-serif; /* Use heading font */
+      background-color: #FFC907; /* Brand yellow */
+      color: black; /* Black text */
+      padding: 20px 40px; /* Large padding for big button */
+      border: none; /* Remove border */
+      border-radius: 8px; /* Round corners */
+      font-size: 1.5rem; /* Large text */
+      font-weight: bold; /* Bold text */
+      cursor: pointer; /* Show it's clickable */
+      transition: all 0.3s ease; /* Smooth hover effect */
+    }
+
+    .donate-btn:hover {
+      background-color: #FFD700; /* Slightly different yellow on hover */
+      transform: translateY(-2px); /* Lift button slightly on hover */
     }
 
     /* Top call-to-action button */
@@ -85,7 +206,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      background-color: #fbd104;
+      background-color: #FFC907; /* Your brand yellow */
       color: black;
       padding: 10px 15px;
       border: none;
@@ -112,7 +233,7 @@
     /* Main call-to-action button */
     .main-cta {
       font-family: 'Montserrat', sans-serif;
-      background-color: #fbd104;
+      background-color: #FFC907; /* Your brand yellow */
       color: black;
       padding: 12px 20px;
       border: none;
@@ -122,36 +243,169 @@
       cursor: pointer;
     }
 
-    /* Make the layout responsive for small screens */
-    @media (max-width: 600px) {
+    /* RESPONSIVE DESIGN WITH MEDIA QUERIES */
+    /* Media queries allow us to apply different styles based on screen size */
+    /* This ensures our website looks great on phones, tablets, and desktops */
+
+    /* Tablet styles (768px and below) */
+    /* iPads and smaller tablets need medium-sized adjustments */
+    @media (max-width: 768px) {
       .hero {
-        justify-content: center;
-        padding-left: 0;
+        padding-left: 5%; /* Reduce left padding on tablets */
       }
 
       .content {
-        text-align: center;
+        max-width: 400px; /* Slightly smaller content area */
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.5rem; /* Medium heading size for tablets */
+      }
+
+      .impact-container {
+        gap: 40px; /* Reduce gap between image and text */
+      }
+
+      .impact-text h2 {
+        font-size: 2.2rem; /* Smaller heading for tablets */
+      }
+
+      .donation-section h2 {
+        font-size: 2.5rem; /* Adjust donation heading size */
+      }
+    }
+
+    /* Mobile phone styles (600px and below) */
+    /* Phones need the most dramatic layout changes for usability */
+    @media (max-width: 600px) {
+      /* Hero section adjustments for mobile */
+      .hero {
+        justify-content: center; /* Center content instead of left-align */
+        padding-left: 0; /* Remove left padding on mobile */
+        padding: 20px; /* Add padding all around */
+      }
+
+      .content {
+        text-align: center; /* Center text for better mobile reading */
+        max-width: 100%; /* Use full width on mobile */
+      }
+
+      /* Make headings smaller so they fit on small screens */
+      h1 {
+        font-size: 2rem; /* Much smaller heading for phones */
+        line-height: 1.2; /* Tighter line spacing */
+      }
+
+      /* Make logo smaller so it doesn't take up too much space */
+      .logo img {
+        height: 40px; /* Smaller logo on mobile */
+      }
+
+      .logo-text {
+        font-size: 1.1rem; /* Smaller text on mobile */
+        letter-spacing: 0.1em; /* Less spacing on mobile for better fit */
+      }
+
+      /* Stack image and text vertically on mobile for better readability */
+      .impact-container {
+        flex-direction: column; /* Stack vertically instead of side-by-side */
+        gap: 50px; /* Larger gap for mobile */
+        text-align: center; /* Center everything on mobile */
+      }
+
+      /* Adjust image styling for mobile */
+      .impact-image {
+        max-width: 100%; /* Use full width on mobile */
+      }
+
+      .impact-image::before {
+        display: none; /* Remove decorative element on mobile for cleaner look */
+      }
+
+      .impact-text h2 {
+        font-size: 1.8rem; /* Smaller heading that fits mobile screens */
+      }
+
+      .impact-text p {
+        font-size: 1rem; /* Slightly smaller text for mobile */
+      }
+
+      /* Make donation section mobile-friendly */
+      .donation-section {
+        padding: 60px 20px; /* Less top/bottom padding on mobile */
+      }
+
+      .donation-section h2 {
+        font-size: 2rem; /* Smaller heading for mobile */
+        line-height: 1.2; /* Tighter spacing */
+      }
+
+      .donation-section p {
+        font-size: 1.1rem; /* Smaller paragraph text */
+      }
+
+      /* Make donate button touch-friendly for mobile */
+      .donate-btn {
+        padding: 15px 30px; /* Smaller but still touch-friendly */
+        font-size: 1.2rem; /* Readable text size */
+        width: 100%; /* Full width button on mobile */
+        max-width: 300px; /* But not too wide */
+      }
+
+      /* Make top buttons mobile-friendly */
+      .top-cta {
+        font-size: 0.9rem; /* Smaller text */
+        padding: 8px 12px; /* Smaller padding */
+      }
+
+      .main-cta {
+        width: 100%; /* Full width on mobile */
+        max-width: 280px; /* But not too wide */
+      }
+    }
+
+    /* Very small phone styles (480px and below) */
+    /* Extra small phones need even more compact layouts */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 15px; /* Even less padding for tiny screens */
+      }
+
+      h1 {
+        font-size: 1.8rem; /* Even smaller heading */
       }
 
       .logo {
-        font-size: 1rem;
-        padding: 6px 10px;
+        top: 15px; /* Move logo closer to top */
+        left: 15px;
+      }
+
+      .top-cta {
+        top: 15px; /* Move button closer to top */
+        right: 15px;
+        font-size: 0.8rem; /* Smaller text */
+        padding: 6px 10px; /* Smaller padding */
+      }
+
+      .impact-section,
+      .donation-section {
+        padding: 40px 15px; /* Less padding all around */
+      }
+
+      .donation-section h2 {
+        font-size: 1.6rem; /* Smaller heading for tiny screens */
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hero section with background image and overlay -->
+  <!-- Hero section with background image -->
   <section class="hero">
-    <div class="overlay"></div>
 
     <!-- Logo in the top left corner -->
     <div class="logo">
-      <span>☑</span> charity: water
+      <img src="img/water-can-transparent.png" alt="charity: water logo">
+      <span class="logo-text">charity: water</span>
     </div>
 
     <!-- Top call-to-action button -->
@@ -164,7 +418,32 @@
       <button class="main-cta">$5 = Clean Water. That’s It.</button>
     </div>
   </section>
-</body>
-</html>
+
+  <!-- Impact story section -->
+  <section class="impact-section">
+    <div class="impact-container">
+      <!-- Use the CG-2632 image to show real impact -->
+      <div class="impact-image">
+        <img src="img/Madagascar_2019_CG-2632.jpg" alt="Clean water brings joy to communities in Madagascar">
+      </div>
+      
+      <!-- Real story text -->
+      <div class="impact-text">
+        <h2>Meet Farah from Madagascar</h2>
+        <p>Before charity: water brought clean water to her village, 8-year-old Farah walked 3 hours every day to collect dirty water from a distant pond.</p>
+        <p>Today, she has clean water just steps from her home. Instead of walking for hours, she spends her time in school, learning to read and playing with friends.</p>
+        <p>Your donation doesn't just provide water—it gives children like Farah the chance to dream bigger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation call-to-action section -->
+  <section class="donation-section">
+    <div class="donation-container">
+      <h2>Join the Water Revolution</h2>
+      <p>785 million people still lack access to clean water. Together, we can change that—one person, one community, one life at a time.</p>
+      <button class="donate-btn">Donate Now</button>
+    </div>
+  </section>
 </body>
 </html>
